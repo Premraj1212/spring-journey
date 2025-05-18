@@ -6,3 +6,4 @@
 - H2 in-memory database
 - H2 database configurations
 - data seeding and defining schema
+- Applied Spring Profiles and segregated profiles for in-memory H2 and local mysql database
