@@ -14,7 +14,7 @@ public class Product {
     private Integer id;
     private String name;
     private String description;
-    private String band;
+    private String brand;
     private Double price;
     private String category;
     @Column(name = "release_date")
@@ -23,20 +23,27 @@ public class Product {
     private Boolean isAvailable;
     @Column(name = "stock_quantity")
     private Integer quantity;
+    private String imageName;
+    private String imageType;
+
+    @Lob
+    private byte[] imageData;
 
     public Product() {
     }
 
-    public Product(Integer id, String name, String description, String band, Double price, String category, String releaseDate, Boolean isAvailable, Integer quantity) {
-        this.id = id;
+    public Product(String name, String description, String brand, Double price, String category, String releaseDate, Boolean isAvailable, Integer quantity, String imageName, String imageType, byte[] imageData) {
         this.name = name;
         this.description = description;
-        this.band = band;
+        this.brand = brand;
         this.price = price;
         this.category = category;
         this.releaseDate = releaseDate;
         this.isAvailable = isAvailable;
         this.quantity = quantity;
+        this.imageName = imageName;
+        this.imageType = imageType;
+        this.imageData = imageData;
     }
 
     public Integer getId() {
@@ -63,12 +70,12 @@ public class Product {
         this.description = description;
     }
 
-    public String getBand() {
-        return band;
+    public String getBrand() {
+        return brand;
     }
 
-    public void setBand(String band) {
-        this.band = band;
+    public void setBrand(String brand) {
+        this.brand = brand;
     }
 
     public Double getPrice() {
@@ -110,4 +117,29 @@ public class Product {
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
+
+    public String getImageName() {
+        return imageName;
+    }
+
+    public void setImageName(String imageName) {
+        this.imageName = imageName;
+    }
+
+    public String getImageType() {
+        return imageType;
+    }
+
+    public void setImageType(String imageType) {
+        this.imageType = imageType;
+    }
+
+    public byte[] getImageData() {
+        return imageData;
+    }
+
+    public void setImageData(byte[] imageData) {
+        this.imageData = imageData;
+    }
+
 }
