@@ -30,5 +30,19 @@ public class ProductController {
         return new ResponseEntity<>(productService.getProduct(id), HttpStatus.OK);
     }
 
+    @PostMapping("/product")
+    public ResponseEntity<String> addProduct(@RequestBody Product product){
+        productService.addProduct(product);
+        return ResponseEntity
+                .status(HttpStatus.CREATED)
+                .body("Product added Successfully!!!");
+    }
 
+    @DeleteMapping("/delProduct/{id}")
+    public ResponseEntity<String> deleteProduct(@PathVariable("id") Integer id){
+        productService.deleteProductById(id);
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body("Product deleted Successfully!!!");
+    }
 }
